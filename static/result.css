@@ -1,0 +1,193 @@
+
+        /* Styling for the overall page */
+        body {
+            font-family: 'Roboto', sans-serif; /* Uses Roboto font */
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Sets a gradient background */
+            margin: 0; /* Removes default margins */
+            padding: 0; /* Removes default padding */
+            display: flex; /* Enables flexbox for centering content */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            height: 100vh; /* Full viewport height */
+            color: #444; /* Sets the text color */
+            position: relative; /* Allows absolutely positioned elements inside */
+        }
+
+        /* Styling for the container box */
+        .container {
+            background: linear-gradient(white, #f9f9f9); /* Light gradient background */
+            padding: 40px; /* Space inside the container */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            width: 90%; /* Width is 90% of the viewport */
+            max-width: 600px; /* Sets a maximum width */
+            text-align: center; /* Centers text */
+            position: relative; /* Allows for internal absolute positioning */
+            overflow: hidden; /* Hides content that exceeds the container bounds */
+            border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+            animation: fadeIn 1.2s ease-in-out; /* Fade-in animation */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+        }
+
+        /* Scaling the container slightly on hover and enhancing the shadow */
+        .container:hover {
+            transform: scale(1.02); /* Scales up the container slightly */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+        }
+
+        /* Header (H1) styling */
+        h1 {
+            color: #2c3e50; /* Dark blue-gray color */
+            font-size: 38px; /* Large font size */
+            margin-bottom: 20px; /* Space below the header */
+            font-weight: 700; /* Bold font */
+            text-transform: uppercase; /* Converts text to uppercase */
+            letter-spacing: 2px; /* Adds space between letters */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Slight text shadow */
+        }
+
+        /* Styling for paragraph (P) elements */
+        p {
+            color: black; /* Black text color */
+            font-size: 20px; /* Medium font size */
+            line-height: 1.6; /* Spacing between lines */
+            margin-bottom: 25px; /* Space below the paragraph */
+            text-align: center; /* Centers text */
+            letter-spacing: 0.5px; /* Slight letter spacing */
+        }
+
+        /* Styling for the result box */
+        .result {
+            font-size: 24px; /* Font size for result text */
+            font-weight: bold; /* Bold font */
+            margin: 30px 0; /* Margins above and below */
+            padding: 15px; /* Padding inside the result box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+            animation: pulse 1.5s infinite; /* Infinite pulsing animation */
+        }
+
+        /* Different color themes for low, medium, and high risk */
+        .low-risk {
+            color: #28a745; /* Green text */
+            background: rgba(40, 167, 69, 0.1); /* Light green background */
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2); /* Green-tinted shadow */
+        }
+        .medium-risk {
+            color: #ffc107; /* Yellow text */
+            background: rgba(255, 193, 7, 0.1); /* Light yellow background */
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2); /* Yellow-tinted shadow */
+        }
+        .high-risk {
+            color: #ff4757; /* Red text */
+            background: rgba(255, 71, 87, 0.1); /* Light red background */
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.2); /* Red-tinted shadow */
+        }
+
+        /* Styling for the "Home" button */
+        .home-btn {
+            display: inline-block; /* Makes the button inline block */
+            padding: 15px 35px; /* Padding inside the button */
+            font-size: 18px; /* Medium font size */
+            border: none; /* Removes border */
+            border-radius: 50px; /* Rounded button shape */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            margin-top: 30px; /* Space above the button */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Button shadow */
+        }
+
+        /* Button color themes for different risk levels */
+        .home-btn.low-risk-btn {
+            background-color: #28a745; /* Green for low risk */
+        }
+        .home-btn.medium-risk-btn {
+            background-color: #ffc107; /* Yellow for medium risk */
+        }
+        .home-btn.high-risk-btn {
+            background-color: #ff4757; /* Red for high risk */
+        }
+
+        /* Button hover effect */
+        .home-btn:hover {
+            transform: translateY(-3px); /* Moves the button up on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+        }
+
+        /* Darker color on hover for each risk level */
+        .home-btn.low-risk-btn:hover {
+            background-color: #218838; /* Darker green */
+        }
+        .home-btn.medium-risk-btn:hover {
+            background-color: #e0a800; /* Darker yellow */
+        }
+        .home-btn.high-risk-btn:hover {
+            background-color: #e63946; /* Darker red */
+        }
+
+        /* Decorative shapes floating on the background */
+        .shape {
+            position: absolute; /* Allows free placement in the container */
+            background-color: rgba(52, 152, 219, 0.7); /* Blue, semi-transparent */
+            border-radius: 50%; /* Circular shape */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+            opacity: 0.8; /* Semi-transparent */
+            animation: float 5s ease-in-out infinite; /* Floating animation */
+        }
+
+        /* Specific shape sizes and positions */
+        .shape.one {
+            width: 150px;
+            height: 150px;
+            bottom: -75px; /* Positions below the container */
+            left: -75px; /* Positions to the left */
+        }
+        .shape.two {
+            width: 150px;
+            height: 150px;
+            top: -75px; /* Positions above the container */
+            right: -75px; /* Positions to the right */
+        }
+
+        /* Fade-in animation for the container */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Pulse animation for the result box */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Floating animation for decorative shapes */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+        }
+
+        /* Color themes for shapes based on risk level */
+        .low-risk-shape {
+            background-color: rgba(40, 167, 69, 0.7); /* Green for low risk */
+        }
+        .medium-risk-shape {
+            background-color: rgba(255, 193, 7, 0.7); /* Yellow for medium risk */
+        }
+        .high-risk-shape {
+            background-color: rgba(255, 71, 87, 0.7); /* Red for high risk */
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px; /* Smaller font size for headers */
+            }
+            .result {
+                font-size: 20px; /* Smaller result font */
+            }
+            .home-btn {
+                padding: 12px 30px; /* Smaller padding for buttons */
+                font-size: 16px; /* Smaller button font */
+            }
+        }

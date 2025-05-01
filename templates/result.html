@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Defines the document as HTML and sets the language to English -->
+<head>
+    <!-- Meta tags: these provide information about the webpage -->
+    <meta charset="UTF-8"> <!-- Specifies the character encoding as UTF-8 -->
+    <link rel="shortcut icon" type="x-icon" href="static\images\lungtitle.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the website is responsive and scales well on different devices -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures compatibility with older versions of Internet Explorer -->
+    
+    <!-- Title: sets the title of the page, which appears in the browser tab -->
+    <title>Lung Cancer Prediction Result</title>
+    
+    <!-- Importing the Roboto font from Google Fonts for consistent typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+<!-- Main container for the content -->
+<div class="container">
+    <h1>Lung Cancer Prediction Result</h1>
+    <p>Based on the information you provided, your lung cancer risk prediction is:</p>
+    
+    <!-- This div will show the risk result dynamically -->
+    <div class="result" id="prediction-result">{{ risk_level|capitalize}} Risk</div>
+    
+    <p>It's recommended to consult a healthcare provider for a detailed diagnosis.</p>
+    
+    <!-- Button that links back to the home page -->
+    <button class="home-btn" id="home-btn" onclick="location.href='/';">Go to Home</button>
+    
+    <!-- Floating decorative shapes -->
+    <div class="shape one" id="shape-one"></div>
+    <div class="shape two" id="shape-two"></div>
+</div>
+
+<!-- JavaScript for dynamically updating the page content based on risk level -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Function to set the result, shapes, and button color dynamically
+    const riskLevel = "{{ risk_level }}"; // Ensure this variable is correctly passed from the server
+    const resultDiv = document.getElementById('prediction-result');
+    const homeBtn = document.getElementById('home-btn');
+    const shapeOne = document.getElementById('shape-one');
+    const shapeTwo = document.getElementById('shape-two');
+
+    // Update the content and styling based on the risk level
+    if (riskLevel === 'low') {
+        resultDiv.textContent = 'Low Risk';
+        resultDiv.classList.add('low-risk');
+        shapeOne.classList.add('low-risk-shape');
+        shapeTwo.classList.add('low-risk-shape');
+        homeBtn.classList.add('low-risk-btn');
+    } else if (riskLevel === 'medium') { // Added medium case
+        resultDiv.textContent = 'Medium Risk';
+        resultDiv.classList.add('medium-risk');
+        shapeOne.classList.add('medium-risk-shape');
+        shapeTwo.classList.add('medium-risk-shape');
+        homeBtn.classList.add('medium-risk-btn');
+    } else if (riskLevel === 'high') {
+        resultDiv.textContent = 'High Risk';
+        resultDiv.classList.add('high-risk');
+        shapeOne.classList.add('high-risk-shape');
+        shapeTwo.classList.add('high-risk-shape');
+        homeBtn.classList.add('high-risk-btn');
+    }
+});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+ /* Overall body styles */
+ body {
+    font-family: 'Roboto', sans-serif;
+     background: linear-gradient(135deg, #1e3c72, #2a5298);
+     background-size: cover;
+     background-position: center;
+     margin: 0;
+     padding: 60px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+ }
+
+ /* Main container styles */
+ .container {
+     background-image: url("images/lungcancer1.jpg"); /* Background image for the container */
+     background-size: cover; /* Ensures image covers the entire container */
+     background-position: center; /* Centers the background image */
+     padding: 40px; /* Padding inside the container */
+     border-radius: 15px; /* Rounds the corners */
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Adds shadow for a 3D effect */
+     width: 100%; /* Makes the container take up 100% of available width */
+     max-width: 800px; /* Limits the width to a maximum of 800px */
+     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+     text-align: left; /* Aligns text to the left */
+     position: relative; /* Allows absolutely positioned elements inside it */
+     overflow: hidden; /* Ensures shapes do not overflow out of the container */
+     border: 1px solid rgba(0, 0, 0, 0.1); /* Light border around the container */
+ }
+
+ /* Hover effect for container */
+ .container:hover {
+     background-image: url("images/lungcancer2.jpg"); /* Changes background image on hover */
+     transform: scale(1.02); /* Slightly scales up the container */
+     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Adds a deeper shadow */
+ }
+
+ /* Changes the background color of shapes on hover */
+ .container:hover .shape {
+     background-color: rgba(255, 0, 0, 0.7); /* Changes shapes' background color to red */
+ }
+
+ /* Header (H1) styles */
+ h1 {
+     color: #34495e; /* Dark blue-gray color for the text */
+     font-size: 48px; /* Large font size for the header */
+     margin-bottom: 20px; /* Space below the header */
+     font-weight: 700; /* Makes the header bold */
+     text-align: center; /* Centers the header text */
+     text-transform: uppercase; /* Converts the text to uppercase */
+     letter-spacing: 2px; /* Adds space between the letters */
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow behind the text */
+ }
+
+ /* Label styles */
+ label {
+     color: #34495e; /* Dark gray-blue color for labels */
+     font-size: 20px; /* Medium font size */
+     font-weight: 500; /* Semi-bold */
+     margin-bottom: 10px; /* Space below the label */
+     display: block; /* Makes the label behave like a block element */
+ }
+
+ /* Input field styles */
+ input[type="number"] {
+     padding: 12px; /* Adds padding inside the input */
+     width: 97%; /* Almost full width of the container */
+     margin-bottom: 20px; /* Space below the input field */
+     font-size: 18px; /* Font size for the input text */
+     border-radius: 10px; /* Rounds the corners of the input */
+     border: 1px solid rgba(0, 0, 0, 0.2); /* Light border around the input */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for 3D effect */
+     transition: border-color 0.3s ease; /* Smooth transition for border color on focus */
+ }
+
+ /* Select field styles */
+ select {
+     padding: 12px; /* Same padding as input fields */
+     width: 100%; /* Takes up full width of the container */
+     margin-bottom: 20px; /* Space below the select field */
+     font-size: 18px; /* Font size for the select text */
+     border-radius: 10px; /* Rounds the corners */
+     border: 1px solid rgba(0, 0, 0, 0.2); /* Light border */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+     transition: border-color 0.3s ease; /* Smooth transition for border color */
+ }
+
+ /* Focus effect for inputs and selects */
+ input[type="number"]:focus, select:focus {
+     border-color: #3498db; /* Changes border color to light blue on focus */
+     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Light blue glow */
+ }
+
+ /* Styles for radio button groups */
+ .radio-group {
+     display: flex; /* Aligns radio buttons horizontally */
+     gap: 10px; /* Adds space between radio buttons */
+     margin-bottom: 20px; /* Space below the group */
+ }
+
+ /* Label for radio buttons */
+ .radio-group label {
+     font-size: 18px; /* Medium font size */
+     font-weight: 400; /* Normal weight */
+     color: #34495e; /* Dark gray-blue color */
+ }
+
+ /* Slight space between radio input and label */
+ .radio-group input {
+     margin-right: 5px; /* Adds space between radio button and label text */
+ }
+
+ /* Submit button styles */
+ .submit-btn {
+    display: block;
+     padding: 12px 35px;
+     font-size: 20px;
+     font-weight: 600;
+     color: #fff;
+     background: linear-gradient(135deg, #3498db, #2a5298);
+     border: none;
+     border-radius: 50px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+     text-align: center;
+     margin: 30px auto;
+ }
+
+ /* Hover effect for the submit button */
+ .submit-btn:hover {
+      background: linear-gradient(135deg, #2980b9, #1e3c72);
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+     transform: scale(1.05);
+ }
+
+ /* Styles for floating decorative shapes */
+ .shape {
+     position: absolute; /* Positions the shapes relative to the container */
+     background-color: rgba(52, 152, 219, 0.7); /* Light blue background for shapes */
+     border-radius: 50%; /* Makes the shapes circular */
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Adds shadow to shapes */
+     opacity: 0.8; /* Slight transparency */
+     animation: float 5s ease-in-out infinite; /* Floating animation */
+ }
+
+ /* Specific size and position for shape one */
+ .shape.one {
+     width: 100px;
+     height: 100px;
+     bottom: -50px; /* Positioned below the container */
+     left: -50px; /* Positioned to the left of the container */
+ }
+
+ /* Specific size and position for shape two */
+ .shape.two {
+     width: 150px;
+     height: 150px;
+     top: -75px; /* Positioned above the container */
+     right: -75px; /* Positioned to the right of the container */
+ }
+
+ /* Animation for floating effect */
+ @keyframes float {
+     0%, 100% {
+         transform: translateY(0); /* Normal position */
+     }
+     50% {
+         transform: translateY(20px); /* Moves down by 20px halfway through the animation */
+     }
+ }
+
+ /* Animation for fading in elements */
+ @keyframes fadeIn {
+     0% { opacity: 0; } /* Starts fully transparent */
+     100% { opacity: 1; } /* Ends fully opaque */
+ }
+
+ /* Applying fade-in animation to certain elements */
+ .container, h1, label, .submit-btn {
+     animation: fadeIn 1.2s ease-in-out; /* Fades in over 1.2 seconds */
+ }
